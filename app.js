@@ -1,18 +1,19 @@
 const menu = document.querySelector('.burger');
-const iconMinus = document.querySelector('.icon-right');
-const iconPlus = document.querySelector('.icon-left');
-const counterText = document.querySelector('.counter-text');
-const priceText = document.querySelector('.price-text');
+
 const bigBody = document.querySelector('body');
 const navMoblinks = document.querySelector('.nav-mob-links');
+const quantityCounter = document.querySelectorAll('.quantity-counter'); 
 let count = 0;
 let priceVal = 15999;
 let minu = 0;
-menu.addEventListener('click', () => {
-   bigBody.classList.toggle('obj');
-    navMoblinks.classList.toggle('top-change');
-});
+quantityCounter.forEach(product => {
+    
+     const iconMinus = product.querySelector('.icon-right');
+const iconPlus = product.querySelector('.icon-left');
+const counterText = product.querySelector('.counter-text');
+const priceText = product.querySelector('.price-text');
 iconMinus.addEventListener('click', () => {
+   
     if (count > 0) {
     count--;
     minu -= 15999;
@@ -30,3 +31,9 @@ iconPlus.addEventListener('click', () => {
 });
 
 
+})
+
+menu.addEventListener('click', () => {
+   bigBody.classList.toggle('obj');
+    navMoblinks.classList.toggle('top-change');
+});
